@@ -23,6 +23,9 @@ echo "Installing kubectl..."
 curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
 chmod +x ./kubectl
 mv ./kubectl /usr/local/bin/kubectl
+
+echo "Starting Minikube..."
+minikube start --vm-driver=none
 SCRIPT
 
 Vagrant.configure(2) do |config|
@@ -31,7 +34,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", inline: $script, privileged: true
 
   # Expose GitLab api and ui to the host.
-  config.vm.network "forwarded_port", guest: 80, host: 8080, auto_correct: true
+  #config.vm.network "forwarded_port", guest: 80, host: 8080, auto_correct: true
 
   # Increase memory for Virtualbox.
   config.vm.provider "virtualbox" do |vb|

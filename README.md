@@ -1,5 +1,6 @@
 # go-http-hello-world
 
+```
 vagrant up
 vagrant ssh
 
@@ -20,3 +21,4 @@ Registering runner... succeeded                     runner=ZN7y3yt6
 Please enter the executor: docker-ssh, ssh, virtualbox, kubernetes, custom, docker, parallels, shell, docker+machine, docker-ssh+machine:
 shell
 Runner registered successfully. Feel free to start it, but if it's running already the config should be automatically reloaded!
+```

@@ -26,6 +26,10 @@ mv ./kubectl /usr/local/bin/kubectl
 
 echo "Starting Minikube..."
 minikube start --vm-driver=none
+
+echo "Installing GitLab runner..."
+curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh | bash
+apt install -y gitlab-runner
 SCRIPT
 
 Vagrant.configure(2) do |config|
